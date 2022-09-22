@@ -1,4 +1,4 @@
-module github.com/jaxleof/uispinner
+module github.com/sbs2001/uispinner
 
 go 1.18
 
