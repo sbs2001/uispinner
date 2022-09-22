@@ -74,14 +74,6 @@ func (s *Spinner) Done() {
 	s.mtx.Lock()
 	s.done = true
 	s.mtx.Unlock()
-	if s.depth != 0 {
-		s.mtx.Lock()
-		s.p.childDoneNum++
-		s.mtx.Unlock()
-		if s.p.childDoneNum == len(s.p.child) {
-			s.p.Done()
-		}
-	}
 	for _, v := range s.child {
 		v.Done()
 	}
